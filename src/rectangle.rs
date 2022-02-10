@@ -34,3 +34,14 @@ pub fn square(p1: Point, wh: f32) -> Rectangle {
     };
     return Rectangle { p1, p2 };
 }
+
+#[cfg(test)]
+mod test {
+    use super::*;
+    #[test]
+    fn test_rectangle() {
+        let p1 = Point::new(0.0, 0.0);
+        let sq = square(p1, 10.0);
+        assert_eq!(100.0, sq.rect_area());
+    }
+}

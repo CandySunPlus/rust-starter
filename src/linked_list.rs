@@ -30,3 +30,15 @@ impl List {
         }
     }
 }
+
+#[cfg(test)]
+mod test {
+    use super::*;
+    #[test]
+    fn test_list() {
+        let mut link = List::new();
+        link = link.prepend(20);
+        assert_eq!(1, link.len());
+        assert_eq!("20, Nil", link.stringify());
+    }
+}
